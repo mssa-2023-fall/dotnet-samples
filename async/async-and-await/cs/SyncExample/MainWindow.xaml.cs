@@ -33,6 +33,12 @@ namespace SyncExample
             var stopwatch = Stopwatch.StartNew();
 
             int total = _urlList.Select(url => ProcessUrl(url)).Sum();
+            //the above is the same thing as
+            //for each (var url in _urlList)
+            //{
+            //  total +=ProcessUrl(url);
+            //}
+       
 
             stopwatch.Stop();
             _resultsTextBox.Text += $"\nTotal bytes returned:  {total:#,#}";
